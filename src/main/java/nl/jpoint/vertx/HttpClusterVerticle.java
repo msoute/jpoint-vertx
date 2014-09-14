@@ -17,7 +17,7 @@ public class HttpClusterVerticle extends Verticle {
         vertx.eventBus().registerHandler(JPOINT_EVENTBUS_ADDRESS, (Handler <Message<JsonObject>>) message -> {
             container.logger().info("Received request from : " + message.body().getString("from"));
             message.reply(System.getProperty(USER_NAME_PROPERTY));
-            container.logger().info("Responded with " + System.getProperty(USER_NAME_PROPERTY) + " to " + message.replyAddress());
+            container.logger().info("Responded with " + System.getProperty(USER_NAME_PROPERTY) + " to " + message.body().getString("from"));
         });
 
         HttpServer http = getVertx().createHttpServer();
