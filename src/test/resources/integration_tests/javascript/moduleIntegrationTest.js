@@ -15,8 +15,10 @@ var vassert = require("vertx_assert");
 // The test methods must begin with "test"
 
 function testPing() {
-  vertx.eventBus.send("ping-address", "ping!", function(reply) {
-    vassert.assertEquals("pong!", reply);
+  var jsonData = {};
+  jsonData["from"] = "marcel"
+  vertx.eventBus.send("jpoint.eventbus.example", jsonData, function(reply) {
+    vassert.assertEquals("marcel", reply);
     /*
      If we get here, the test is complete
      You must always call `testComplete()` at the end. Remember that testing is *asynchronous* so

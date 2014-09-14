@@ -17,6 +17,7 @@ package nl.jpoint.vertx.integration.javascript;
  * @author <a href="http://tfox.org">Tim Fox</a>
  */
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.vertx.testtools.ScriptClassRunner;

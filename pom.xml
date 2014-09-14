@@ -18,12 +18,13 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-    <vertx.clustered>true</vertx.clustered>
+      <vertx.clustered>true</vertx.clustered>
 
-    <!-- Set pullInDeps to true if you want any modules specified in the 'includes' and 'deploys' fields
-    in your mod.json to be automatically pulled in during packaging and added inside your module. Doing this means your
-    module won't download and install those dependencies at run-time when they're first requested. -->
+      <!-- Set pullInDeps to true if you want any modules specified in the 'includes' and 'deploys' fields
+      in your mod.json to be automatically pulled in during packaging and added inside your module. Doing this means your
+      module won't download and install those dependencies at run-time when they're first requested. -->
     <vertx.pullInDeps>false</vertx.pullInDeps>
 
     <!-- Set createFatJar to true if you want to create a fat executable jar which contains the Vert.x binaries
@@ -52,6 +53,7 @@
     <maven.surefire.report.plugin.version>2.14</maven.surefire.report.plugin.version>
     <maven.javadoc.plugin.version>2.9</maven.javadoc.plugin.version>
     <maven.dependency.plugin.version>2.7</maven.dependency.plugin.version>
+    <maven.jxr.plugin.version>2.3</maven.jxr.plugin.version>
   </properties>
 
   <repositories>
@@ -108,7 +110,8 @@
   </dependencies>
 
   <build>
-    <plugins>
+
+      <plugins>
 
       <!-- The vert.x Maven plugin -->
       <plugin>
@@ -300,10 +303,15 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>${maven.javadoc.plugin.version}</version>
+        <version></version>
         <configuration>
           <aggregate>true</aggregate>
         </configuration>
+      </plugin>
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jxr-plugin</artifactId>
+          <version>${maven.jxr.plugin.version}</version>
       </plugin>
     </plugins>
   </reporting>
