@@ -16,9 +16,9 @@ var vassert = require("vertx_assert");
 
 function testPing() {
   var jsonData = {};
-  jsonData["from"] = "marcel"
+  jsonData["from"] = "javascript"
   vertx.eventBus.send("jpoint.eventbus.example", jsonData, function(reply) {
-    vassert.assertEquals("marcel", reply);
+    vassert.assertNotNull(reply);
     /*
      If we get here, the test is complete
      You must always call `testComplete()` at the end. Remember that testing is *asynchronous* so
