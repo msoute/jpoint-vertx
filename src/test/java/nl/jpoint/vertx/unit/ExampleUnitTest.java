@@ -1,6 +1,6 @@
 package nl.jpoint.vertx.unit;
 
-import nl.jpoint.vertx.PingVerticle;
+import nl.jpoint.vertx.HttpClusterVerticle;
 import org.junit.Test;
 
 /*
@@ -24,7 +24,7 @@ public class ExampleUnitTest {
 
   @Test
   public void testVerticle() {
-    PingVerticle vert = new PingVerticle();
+    HttpClusterVerticle vert = new HttpClusterVerticle();
 
     // do something with verticle
   }

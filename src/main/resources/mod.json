@@ -1,7 +1,7 @@
 {
 
   // Java verticle
-  "main":"nl.jpoint.vertx.PingVerticle",
+  "main":"nl.jpoint.vertx.HttpClusterVerticle",
 
   // In this example we also provide various other versions of the main verticle, you can uncomment this and
   // play around:
@@ -27,14 +27,14 @@
 
   // If your module is going to be registered in the Vert.x module registry you will also need the following
   // mandatory fields
-  "description":"Put description of your module here",
+  "description":"Simple Clustered module",
   "licenses": ["The Apache Software License Version 2.0"],
-  "author": "Joe Bloggs",
+  "author": "Marcel Soute",
 
   // Optional fields
-  "developers": ["Other Dev 1", "Other Dev 2"],
-  "keywords": ["gerbils", "cars", "cheese", "chocolate", "underpants", "herring"],
-  "homepage": "url to your project page",
+  "developers": ["Marcel Soute", "Bert Jan Schrijver"],
+  "keywords": ["jpoint", "vertx", "google"],
+  "homepage": "https://github.com/msoute/jpoint-vertx",
 
   "auto-redeploy": true
 }

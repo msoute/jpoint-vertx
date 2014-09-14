@@ -19,6 +19,8 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
+    <vertx.clustered>true</vertx.clustered>
+
     <!-- Set pullInDeps to true if you want any modules specified in the 'includes' and 'deploys' fields
     in your mod.json to be automatically pulled in during packaging and added inside your module. Doing this means your
     module won't download and install those dependencies at run-time when they're first requested. -->
@@ -113,6 +115,9 @@
         <groupId>io.vertx</groupId>
         <artifactId>vertx-maven-plugin</artifactId>
         <version>${maven.vertx.plugin.version}</version>
+          <configuration>
+              <cluster>${vertx.clustered}</cluster>
+          </configuration>
         <!--
         You can specify extra config to the plugin as required here
         <configuration>
